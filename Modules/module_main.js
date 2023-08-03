@@ -8,6 +8,7 @@ function gameTick() {
     pubsub.emit('Tick', deltaTime);
 }
 
-$('#pageGear').load('Modules/Gear/page_gear.html');
+//$('#pageGear').load('Modules/Gear/page_gear.html');
+$('#pageGear').load('testLoad.html');
 
 setInterval(gameTick, 50);
