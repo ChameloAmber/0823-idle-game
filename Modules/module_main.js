@@ -10,27 +10,13 @@ function gameTick() {
 
 //$('#pageGear').load('Modules/Gear/page_gear.html');
 // Test Load method #1
-$('#testLoadPageNumber1').load('Modules/Gear/page_gear.html');
+$('#testLoadPageNumber1').load('./Modules/Gear/page_gear.html');
 
 // Test Load method #2
-let xhttp;
-let element = document.getElementById('testLoadPageNumber2');
-let file = 'testLoad2.html';
-
-if (file) {
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-            if (this.readyState == 200) {element.innerHTML = this.responseText;}
-            if (this.readyState == 404) {element.innerHTML = "<h1>Page not found</h1>";}
-        }
-    }
-    xhttp.open("GET", file, true);
-    xhttp.send();
-}
+$('#testLoadPageNumber2').load('testLoad2.html');
 
 // Test Load method #3
-const targetEl = document.querySelector('#testLoadPageNumber3');
+/*const targetEl = document.querySelector('#testLoadPageNumber3');
 const loadSnippet = number => {
     fetch(`./testLoad3.html`)
         .then(res => {
@@ -41,7 +27,7 @@ const loadSnippet = number => {
         .then(htmlSnippet => {
             targetEl.innerHTML = htmlSnippet;
         });
-};
+};*/
 
 loadSnippet(1);
 
