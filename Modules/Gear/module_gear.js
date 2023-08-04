@@ -1,5 +1,6 @@
 var moduleGear = (function(){
     
+    // Init Gear
     let gears = [
         new GearUnit(1, 0, 100, 1),
         new GearUnit(2, 0, 2, 1),
@@ -8,17 +9,34 @@ var moduleGear = (function(){
         new GearUnit(5, 0, 8, 2)
     ];
 
+    // Find Elements
     let elements = [
         $('#Gear1'),
         $('#Gear2'),
         $('#Gear3'),
         $('#Gear4'),
         $('#Gear5')
-    ]
+    ];
     
     let c = 1;
-    for(let item of gears) {
-        c = item.Recalculate(c);
+
+    function Recalculate() {
+        c = 1;
+        for(let item of gears) {
+            c = item.Recalculate(c);
+        }
+    }
+
+    Recalculate();
+
+    function FindElements() {
+        elements = [
+            $('#Gear1'),
+            $('#Gear2'),
+            $('#Gear3'),
+            $('#Gear4'),
+            $('#Gear5')
+        ];
     }
 
     function Tick(deltaTime) {
@@ -35,6 +53,9 @@ var moduleGear = (function(){
 
     pubsub.on('Tick', Tick)
 
-    return {}
+    return {
+        Recalculate: Recalculate,
+        FindElements: FindElements
+    }
 
 })()
