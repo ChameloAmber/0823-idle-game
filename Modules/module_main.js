@@ -10,7 +10,7 @@ function gameTick() {
 
 //$('#pageGear').load('Modules/Gear/page_gear.html');
 // Test Load method #1
-$('#testLoadPageNumber1').load('/Modules/Gear/page_gear.html');
+$('#testLoadPageNumber1').load('Modules/Gear/page_gear.html');
 
 // Test Load method #2
 let xhttp;
