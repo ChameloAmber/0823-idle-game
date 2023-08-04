@@ -9,7 +9,6 @@ function gameTick() {
 }
 
 $('#pageGear').load('Modules/Gear/page_gear.html');
-moduleGear.FindElements();
 // Test Load method #1
 //$('#testLoadPageNumber1').load('Modules/Gear/page_gear.html');
 

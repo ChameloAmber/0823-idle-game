@@ -46,6 +46,7 @@ var moduleGear = (function(){
         }
 
         for(i = 0; i < gears.length; i++) {
+            if (!elements[i].length) {FindElements();}
             elements[i].text("Floor " + gears[i].floor + ": " + gears[i].GetPercentageString() + "%(" + gears[i].amount.toFixed(4) + "/" + gears[i].capacity + ")");
         }
 
