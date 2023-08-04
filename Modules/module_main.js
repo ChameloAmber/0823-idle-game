@@ -1,34 +1,17 @@
-var currentTime = new Date()
-var deltaTime = 0
+var moduleMain = (function() {
 
-function gameTick() {
-    newTime = new Date();
-    deltaTime = newTime - currentTime;
-    currentTime = newTime;
-    pubsub.emit('Tick', deltaTime);
-}
+    var currentTime = new Date()
+    var deltaTime = 0
 
-$('#pageGear').load('Modules/Gear/page_gear.html');
-// Test Load method #1
-//$('#testLoadPageNumber1').load('Modules/Gear/page_gear.html');
+    function gameTick() {
+        newTime = new Date();
+        deltaTime = newTime - currentTime;
+        currentTime = newTime;
+        pubsub.emit('Tick', deltaTime);
+    }
 
-// Test Load method #2
-//$('#testLoadPageNumber2').load('testLoad2.html');
+    setInterval(gameTick, 50);
 
-// Test Load method #3
-/*const targetEl = document.querySelector('#testLoadPageNumber3');
-const loadSnippet = number => {
-    fetch(`./testLoad3.html`)
-        .then(res => {
-            if(res.ok) {
-                return res.text();
-            }
-        })
-        .then(htmlSnippet => {
-            targetEl.innerHTML = htmlSnippet;
-        });
-};
+})();
 
-loadSnippet(1);*/
-
-setInterval(gameTick, 50);
+$('#mainPanel').load('Modules/Gear/page_gear.html');
