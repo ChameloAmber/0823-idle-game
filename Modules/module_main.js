@@ -27,8 +27,8 @@ const loadSnippet = number => {
         .then(htmlSnippet => {
             targetEl.innerHTML = htmlSnippet;
         });
-};*/
+};
 
-loadSnippet(1);
+loadSnippet(1);*/
 
 setInterval(gameTick, 50);
